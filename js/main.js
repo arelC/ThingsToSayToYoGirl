@@ -13,13 +13,7 @@ var compliments = [
     "I can’t wait to see you again."
 ];
 
-
-for (let i = 0; i < 10; i++) {
+btn_compliment.addEventListener("click", function () {
     random_compliment = Math.floor(Math.random() * (compliments.length - 0) + 0);
     output.innerHTML += compliments[random_compliment] + "<br>";
-}
-
-btn_compliment.addEventListener("click", function() {
-    console.log("Clicked!");
 });
-
