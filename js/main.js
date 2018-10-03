@@ -1,4 +1,5 @@
 var output = document.getElementById("main");
+var btn_compliment = document.getElementById("btn_compliment");
 
 var compliments = [
     "My life has never been the same since I met you.",
@@ -17,3 +18,8 @@ for (let i = 0; i < 10; i++) {
     random_compliment = Math.floor(Math.random() * (compliments.length - 0) + 0);
     output.innerHTML += compliments[random_compliment] + "<br>";
 }
+
+btn_compliment.addEventListener("click", function() {
+    console.log("Clicked!");
+});
+
