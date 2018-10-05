@@ -1,5 +1,5 @@
 ////////// Displays the output on the HTML page
-var output = document.getElementById("main");
+var output = document.getElementById("output");
 ////////// HTML button used to generate a random quote
 var btn_compliment = document.getElementById("btn_compliment");
 ////////// An array that contains random compliments (should be changed later to pull data from a database)
@@ -17,5 +17,5 @@ var compliments = [
 ////////// Generates a random compliment when btn_compliment is clicked and is displayed on the HTML page
 btn_compliment.addEventListener("click", function () {
     random_compliment = Math.floor(Math.random() * (compliments.length - 0) + 0);
-    output.innerHTML += compliments[random_compliment] + "<br>";
+    output.innerHTML = "<h1 class='is-size-2 stylized-text'>\"" + compliments[random_compliment] + "\"</h1>"
 });

@@ -1,0 +1,38 @@
+html, body {
+    background-color: #F1FAEE;
+}
+
+.element-background-color {
+    background: #1D3557 !important;
+}
+
+.logo-font {
+    font-family: 'Seaweed Script', cursive;
+    color: #E63946 !important;
+    text-shadow: -1px 1px #A8DADC;
+    padding-bottom: 12px;
+}
+
+h1.stylized-text {
+    font-family: 'Fjalla One', sans-serif;
+    color: #E63946 !important;
+    text-shadow: -1px 1px #1D3557;
+    font-weight: bold;
+    margin: 0 !important;
+}
+
+a.stylized-text {
+    font-family: 'Fjalla One', sans-serif;
+    color: #E63946 !important;
+    text-shadow: -1px 1px #A8DADC;
+    font-weight: bold;
+}
+
+.custom-button {
+    margin-top: 128px !important;
+    background-color: #1D3557;
+}
+
+#output {
+    height: 256px;
+}
