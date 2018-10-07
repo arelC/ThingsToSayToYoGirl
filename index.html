@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Seaweed+Script">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <title>Things To Say To Yo Girl | v.0.0.1</title>
 </head>
@@ -21,27 +23,57 @@
         <div class="level element-background-color">
             <div class="level-item ">
                 <div class="content ">
-                    <h1 class="logo-font is-size-1 is-marginless">Things To Say To Yo Girl <i class="fas fa-heart"></i></h1>
+                    <h1 class="logo-font is-size-4-mobile is-size-2-tablet is-size-1-desktop is-marginless animated rubberBand">
+                        Things To Say To Yo Girl <i class="fas fa-heart"></i>
+                    </h1>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <div class="hero is-fullheight">
+        <div class="hero is-medium">
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <div class="content">
-                        <div id="output">
-                            <h1 class="is-size-1 stylized-text">speechless?</h1>
-                            <h1 class="is-size-2 stylized-text">we got you, fam.</h1>
+                        <div class="animated bounceInRight" id="output">
+                            <h1 class="is-size-3-mobile is-size-2-tablet is-size-1-desktop stylized-text">speechless?</h1>
+                            <h1 class="is-size-4-mobile is-size-3-tablet is-size-2-desktop stylized-text">we got you,
+                                fam.</h1>
                         </div>
-                        <a class="button custom-button is-size-3 stylized-text" id="btn_compliment">Compliment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <div class="level">
+                        <div class="level-item">
+                            <a class="button custom-button is-size-4-mobile is-size-3-tablet is-size-2-desktop stylized-text stylized-text animated bounceInLeft"
+                            id="btn_compliment">Compliment</a>
+                        </div>
+                        <div class="level-item">
+                            <a class="button custom-button is-size-4-mobile is-size-3-tablet is-size-2-desktop stylized-text stylized-text animated bounceInLeft"
+                            id="btn_funny">Funny</a>
+                        </div>
+                        <div class="level-item">
+                            <a class="button custom-button is-size-4-mobile is-size-3-tablet is-size-2-desktop stylized-text stylized-text animated bounceInLeft"
+                            id="btn_insult">Insult</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="content has-text-centered custom-footer animated fadeIn delay-4s slower">
+            <p>Developed & Designed by <strong>AJ Clemente</strong> | 2018</p>
+        </div>
+    </footer>
+
+    <!-- my own js -->
     <script src="js/main.js"></script>
 </body>
 

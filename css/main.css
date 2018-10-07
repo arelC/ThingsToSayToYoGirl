@@ -29,10 +29,28 @@ a.stylized-text {
 }
 
 .custom-button {
-    margin-top: 128px !important;
     background-color: #1D3557;
+    width: 250px;
+}
+
+.custom-footer {
+    position: absolute;
+    margin: auto !important;
+    width: 100%;
+    height: 24px;
+    bottom: 0;
+    background-color: transparent;
+}
+
+.icon-button {
+    font-size: 30px;
+    color: #1D3557;
+    text-decoration: none;
+    height: 100%;
+    line-height: 100%;
+    white-space: nowrap;
 }
 
 #output {
-    height: 256px;
+    height: 64px;
 }

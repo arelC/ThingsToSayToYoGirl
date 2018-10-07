@@ -1,8 +1,12 @@
 ////////// Displays the output on the HTML page
 var output = document.getElementById("output");
-////////// HTML button used to generate a random quote
+////////// HTML button used to generate a random compliment quote
 var btn_compliment = document.getElementById("btn_compliment");
-////////// An array that contains random compliments (should be changed later to pull data from a database)
+////////// HTML button used to generate a random funny quote
+var btn_funny = document.getElementById("btn_funny");
+////////// HTML button used to generate a random insult quote
+var btn_insult = document.getElementById("btn_insult");
+////////// An array that contains random compliments
 var compliments = [
     "My life has never been the same since I met you.",
     "Words can’t explain what a wonderful person you are.",
@@ -12,10 +16,196 @@ var compliments = [
     "I have the perfect life now that you are a part of it.",
     "You take my breath away.",
     "Falling in love with you is the second best thing in the world because finding you was the first.",
-    "I can’t wait to see you again."
+    "I can’t wait to see you again.",
+    "I simply cannot stop thinking about you.",
+    "I would love to carry you the whole day in my arms.",
+    "I want to spend my entire life with you.",
+    "You are the reason why I find this world beautiful.",
+    "You are gorgeous, cute and pretty.",
+    "The best things that has happened to me is falling in love with you.",
+    "A casual glance at you and my heart starts beating faster.",
+    "In a room full of art, I'd still stare at you.",
+    "I'm just lucky you even look in my direction occasionally.",
+    "Hey, can I borrow a kiss? I promise I'll give it back.",
+    "If I had a penny for every time I thought about you, I'd have exactly one cent because you never leave my mind.",
+    "I could wake up next to you for the rest of my life.",
+    "Even if you were cloned, you'd still be one of a kind. And the better looking one.",
+    "It's not easy to be me. Which is why I need you.",
+    "I would love to spend every minute of every day with you, but some days I actually have to get stuff done.",
+    "Your smile is proof that the best things in life are free.",
+    "You're smarter than Google and Mary Poppins combined.",
+    "I think the hardest part about being your friend is pretending as though I like my other friends as much as I like you.",
+    "You're not someone I pretend to not see in public.",
+    "I don't have a favourite colour, It's pretty much whatever you are wearing.",
+    "I can never remember my dreams, but I assume you are always in them.",
+    "You are like a corner piece of a puzzle. Without you, I'm completely lost.",
+    "If the last two people on earth were us, I would have no problem repopulating it with you.",
+    "Out of all my friends you are the best at being single.",
+    "You inspire me and most likely strangers. Also, friends and stalkers. You are the inspiration to many.",
+    "I don't know if sarcasm is a skill, but you've certainly mastered it.",
+    "If you knew how much I think about you, I would be very embarrassed.",
+    "You are so beautiful I would certainly steal your photos, make a fake account and impress people online.",
+    "You're just as pretty as all the layers you hide behind.",
+    "Your face makes other people ugly.",
+    "I can't take my eyes off of you. Unless you notice me, then I'll quickly look away and act like it never happened.",
+    "Are you a beaver, because damn.",
+    "You're like the one sock that dissapears. I don't know what I did to lose you but I want you back.",
+    "If it was legal to marry food, I would still choose you over pizza.",
+    "You might be the primary reason for global warming.",
+    "I bet you make babies smile.",
+    "If there is one thing I like about you, its that I like more than one thing about you.",
+    "You have that kind of body that when others see it they realise they need to workout more.",
+    "You are more unique and wonderful than the smell of a new book.",
+    "The person who raised you deserves a medal for a job well done.",
+    "Did you have plastic surgery to become that attractive?",
+    "I'm not drunk, just intoxicated by you.",
+    "Talking to you is the best part of my day, aside from when I'm sleeping and when I'm eating.",
+    "For someone who has given birth, you look pretty good!",
+    "You're the nothing when people ask me whats on my mind.",
+    "You are awkward, in a cute way. Like an elevator ride, but with puppies.",
+    "It's too bad you don't see what I see, if you did you'd smile and keep looking.",
+    "You may not be really, really good looking. But you're pretty damn close.",
+    "Just like an untrained puppy. I'd really like to take you out.",
+    "You know what's awesome? Chocolate cake, oh and your face.",
+    "I'm not insulting you, I'm describing you.",
+    "Maybe you should eat some makeup so you can be pretty on the inside too.",
+    "Our time together is like a nap, it just doesn't last long enough.",
+    "Every day without you is like a day without my phone, I just don't know what to do with myself.",
+    "I'm really good at people-watching. I'm so glad I can share that hobby on you.",
+    "You make everything better. If people were more like you the world would be perfect.",
+    "You're not lazy, just that the people around you are way too active."
+];
+////////// An array that contains random funny quotes
+var funny = [
+    "Today at the bank, an old lady asked me to help check her balance. So I pushed her over.",
+    "I bought some shoes from a drug dealer. I don't know what he laced them with, but I've been tripping all day.",
+    "I told my girlfriend she drew her eyebrows too high. She seemed surprised.",
+    "My dog used to chase people on a bike a lot. It got so bad, finally I had to take his bike away.",
+    "I'm so good at sleeping. I can do it with my eyes closed.",
+    "My boss told me to have a good day.. so I went home.",
+    "Why is Peter Pan always flying? He neverlands.",
+    "A woman walks into a library and asked if they had any books about paranoia. The librarian says 'They're right behind you!'",
+    "The other day, my wife asked me to pass her lipstick but I accidentally passed her a glue stick. She still isn't talking to me.",
+    "Why do blind people hate skydiving? It scares the hell out of their dogs.",
+    "When you look really closely, all mirrors look like eyeballs.",
+    "My friend says to me: 'What rhymes with orange' I said: 'No it doesn't'",
+    "What do you call a guy with a rubber toe? Roberto.",
+    "What did the pirate say when he turned 80 years old? Aye matey.",
+    "My wife told me I had to stop acting like a flamingo. So I had to put my foot down.",
+    "I couldn't figure out why the baseball kept getting larger. Then it hit me.",
+    "Why did the old man fall in the well? Because he couldn't see that well.",
+    "I ate a clock yesterday, it was very time consuming.",
+    "Whatdya call a frenchman wearing sandals? Phillipe Phillope.",
+    "A blind man walks into a bar. And a table. And a chair.",
+    "I know a lot of jokes about unemployed people but none of them work.",
+    "What's orange and sounds like a parrot? A carrot.",
+    "Did you hear about the italian chef that died? He pasta way.",
+    "Why couldn't the bicycle stand up? Because it was two tired!",
+    "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+    "My wife accused me of being immature. I told her to get out of my fort.",
+    "Where do you find a cow with no legs? Right where you left it.",
+    "When a deaf person sees someone yawn do they think it’s a scream?",
+    "As I suspected, someone has been adding soil to my garden. The plot thickens.",
+    "How do crazy people go through the forest? They take the physco path.",
+    "And the lord said unto John, 'Come forth and you will receive eternal life'. John came fifth and won a toaster.",
+    "What did the traffic light say to the car? Don’t look! I’m about to change.",
+    "I just wrote a book on reverse psychology. Do *not* read it!",
+    "What did one hat say to the other? You stay here. I’ll go on ahead.",
+    "Why wouldn’t the shrimp share his treasure? Because he was a little shellfish."
+];
+////////// An array that contains random insults
+var insults = [
+    "If laughter is the best medicine, your face must be curing the world.",
+    "You're so ugly, you scared the crap out of the toilet.",
+    "Your family tree must be a cactus because everybody on it is a prick.",
+    "No I'm not insulting you, I'm describing you.",
+    "It's better to let someone think you are an Idiot than to open your mouth and prove it.",
+    "If I had a face like yours, I'd sue my parents.",
+    "Your birth certificate is an apology letter from the condom factory.",
+    "I guess you prove that even god makes mistakes sometimes.",
+    "The only way you'll ever get laid is if you crawl up a chicken's ass and wait.",
+    "You're so fake, Barbie is jealous.",
+    "I’m jealous of people that don’t know you!",
+    "My psychiatrist told me I was crazy and I said I want a second opinion. He said okay, you're ugly too.",
+    "You're so ugly, when your mom dropped you off at school she got a fine for littering.",
+    "If I wanted to kill myself I'd climb your ego and jump to your IQ.",
+    "You must have been born on a highway because that's where most accidents happen.",
+    "Brains aren't everything. In your case they're nothing.",
+    "I don't know what makes you so stupid, but it really works.",
+    "I can explain it to you, but I can’t understand it for you.",
+    "Roses are red violets are blue, God made me pretty, what happened to you?",
+    "Behind every fat woman there is a beautiful woman. No seriously, your in the way.",
+    "Calling you an idiot would be an insult to all the stupid people.",
+    "You, sir, are an oxygen thief!",
+    "Some babies were dropped on their heads but you were clearly thrown at a wall.",
+    "Don't like my sarcasm, well I don't like your stupid.",
+    "Why don't you go play in traffic.",
+    "Please shut your mouth when you’re talking to me.",
+    "I'd slap you, but that would be animal abuse.",
+    "They say opposites attract. I hope you meet someone who is good-looking, intelligent, and cultured.",
+    "Stop trying to be a smart ass, you're just an ass.",
+    "The last time I saw something like you, I flushed it.",
+    "'m busy now. Can I ignore you some other time?",
+    "You have Diarrhea of the mouth; constipation of the ideas.",
+    "If ugly were a crime, you'd get a life sentence.",
+    "Your mind is on vacation but your mouth is working overtime.",
+    "I can lose weight, but you’ll always be ugly.",
+    "Why don't you slip into something more comfortable... like a coma.",
+    "Shock me, say something intelligent.",
+    "If your gonna be two faced, honey at least make one of them pretty.",
+    "Keep rolling your eyes, perhaps you'll find a brain back there.",
+    "You are not as bad as people say, you are much, much worse.",
+    "I don't know what your problem is, but I'll bet it's hard to pronounce.",
+    "You get ten times more girls than me? ten times zero is zero...",
+    "There is no vaccine against stupidity.",
+    "You're the reason the gene pool needs a lifeguard.",
+    "Sure, I've seen people like you before - but I had to pay an admission.",
+    "How old are you? - Wait I shouldn't ask, you can't count that high.",
+    "Have you been shopping lately? They're selling lives, you should go get one.",
+    "You're like Monday mornings, nobody likes you.",
+    "Of course I talk like an idiot, how else would you understand me?",
+    "All day I thought of you... I was at the zoo.",
+    "To make you laugh on Saturday, I need to you joke on Wednesday.",
+    "You're so fat, you could sell shade.",
+    "I'd like to see things from your point of view but I can't seem to get my head that far up my ass.",
+    "Don't you need a license to be that ugly?",
+    "My friend thinks he is smart. He told me an onion is the only food that makes you cry, so I threw a coconut at his face.",
+    "Your house is so dirty you have to wipe your feet before you go outside.",
+    "If you really spoke your mind, you'd be speechless.",
+    "Stupidity is not a crime so you are free to go.",
+    "You are so old, when you were a kid rainbows were black and white.",
+    "If I told you that I have a piece of dirt in my eye, would you move?",
+    "You so dumb, you think Cheerios are doughnut seeds.",
+    "So, a thought crossed your mind? Must have been a long and lonely journey.",
+    "You are so old, your birth-certificate expired.",
+    "Every time I'm next to you, I get a fierce desire to be alone.",
+    "You're so dumb that you got hit by a parked car.",
+    "Keep talking, someday you'll say something intelligent!",
+    "You're so fat, you leave footprints in concrete.",
+    "How did you get here? Did someone leave your cage open?",
+    "Pardon me, but you've obviously mistaken me for someone who gives a damn.",
+    "Wipe your mouth, there's still a tiny bit of bullshit around your lips.",
+    "Don't you have a terribly empty feeling - in your skull?",
+    "As an outsider, what do you think of the human race?",
+    "Just because you have one doesn't mean you have to act like one.",
+    "We can always tell when you are lying. Your lips move.",
+    "Are you always this stupid or is today a special occasion?"
 ];
 ////////// Generates a random compliment when btn_compliment is clicked and is displayed on the HTML page
 btn_compliment.addEventListener("click", function () {
     random_compliment = Math.floor(Math.random() * (compliments.length - 0) + 0);
-    output.innerHTML = "<h1 class='is-size-2 stylized-text'>\"" + compliments[random_compliment] + "\"</h1>"
+    output.innerHTML = "<h1 class='is-size-4-mobile is-size-3-tablet is-size-2-desktop stylized-text stylized-text animated fadeIn'>\""
+    + compliments[random_compliment] + "\"</h1>"
+});
+////////// Generates a random funny quote when btn_funny is clicked and is displayed on the HTML page
+btn_funny.addEventListener("click", function () {
+    random_funny = Math.floor(Math.random() * (funny.length - 0) + 0);
+    output.innerHTML = "<h1 class='is-size-4-mobile is-size-3-tablet is-size-2-desktop stylized-text stylized-text animated fadeIn'>\""
+    + funny[random_funny] + "\"</h1>"
+});
+////////// Generates a random insult when btn_insult is clicked and is displayed on the HTML page
+btn_insult.addEventListener("click", function () {
+    random_insult = Math.floor(Math.random() * (insults.length - 0) + 0);
+    output.innerHTML = "<h1 class='is-size-4-mobile is-size-3-tablet is-size-2-desktop stylized-text stylized-text animated fadeIn'>\""
+    + insults[random_insult] + "\"</h1>"
 });
